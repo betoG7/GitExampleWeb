@@ -15,7 +15,27 @@ function mostrarFormulario()
 	return false;
 }
 
+function agregarPost()
+{
+	var url = $link.val(),
+		titulo = $titulo.val(),
+		$clone = $post.clone();
+
+
+	$clone.find(".titulo_item a")
+		.text(titulo)
+		.attr('href', url);
+
+	$clone.hide();
+
+	$list.prepend($clone);
+
+	$clone.fadeIn();
+
+	return false;
+}
 
 
 //EVENTOS
 $button.click( mostrarFormulario );
+$formulario.on('submit', agregarPost);

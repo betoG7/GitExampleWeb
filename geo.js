@@ -17,6 +17,9 @@ $(function(){
 		mapa.src = "http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=200x200&sensor=false&center="+lat+","+lon;
 
 		$('#geo').append(mapa);
+
+		obtenerGeoInfo(lat, lon);
+
 	}
 
 
@@ -24,5 +27,5 @@ $(function(){
 	geo.getCurrentPosition(geo_exito, geo_error, opciones);
 
 
-	
+
 })
